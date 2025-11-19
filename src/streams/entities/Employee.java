@@ -1,8 +1,9 @@
 package streams.entities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-class Employee{
+public class Employee{
     private String name;
     private String email;
     private LocalDate dob;
@@ -49,13 +50,14 @@ class Employee{
         Department = department;
     }
 
-    public Employee(String name, String email, LocalDate dob, double salary, String department) {
+    public Employee(String name, String email, String dob, double salary, String department) {
         this.name = name;
         this.email = email;
-        this.dob = dob;
+        this.dob = LocalDate.parse(dob, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         this.salary = salary;
-        Department = department;
+        this.Department = department;
     }
+
 
     @Override
     public String toString() {
