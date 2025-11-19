@@ -16,6 +16,13 @@ public class P1to5 {
 
         return stringBuilder.toString();
     }
+    public static String reverseStringUsingRec(String str){
+        // Validate string
+        if (str == null || str.isEmpty()) throw new RuntimeException("String should not be null or empty");
+        if (str.length() == 1) return str;
+
+        return str.charAt(str.length()-1)+reverseStringUsingRec(str.substring(0,str.length()-1));
+    }
 
     public static void main(String[] args) {
 //        final String reversedStringUsingLoop1 = reverseStringUsingLoop(null); // throw exception
@@ -24,5 +31,11 @@ public class P1to5 {
         System.out.println(reversedStringUsingLoop3);
         final String reversedStringUsingLoop4 = reverseStringUsingLoop("Harun"); // o/p : nuraH
         System.out.println(reversedStringUsingLoop4);
+
+        final String reversedStringUsingLoop5 = reverseStringUsingRec("H"); // o/p : H
+        System.out.println(reversedStringUsingLoop5);
+        final String reversedStringUsingLoop6 = reverseStringUsingRec("Harun"); // o/p : nuraH
+        System.out.println(reversedStringUsingLoop6);
+
     }
 }
