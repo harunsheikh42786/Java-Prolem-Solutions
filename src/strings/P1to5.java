@@ -2,6 +2,7 @@ package strings;
 
 public class P1to5 {
 
+    // P1
     public static String reverseStringUsingLoop(String str){
         // Validate string
         if (str == null || str.isEmpty()) throw new RuntimeException("String should not be null or empty");
@@ -16,12 +17,21 @@ public class P1to5 {
 
         return stringBuilder.toString();
     }
+    // P2
     public static String reverseStringUsingRec(String str){
         // Validate string
         if (str == null || str.isEmpty()) throw new RuntimeException("String should not be null or empty");
         if (str.length() == 1) return str;
 
         return str.charAt(str.length()-1)+reverseStringUsingRec(str.substring(0,str.length()-1));
+    }
+    // P3
+    public static String reverseStringUsingStringBuilder(String str){
+        // Validate string
+        if (str == null || str.isEmpty()) throw new RuntimeException("String should not be null or empty");
+        if (str.length() == 1) return str;
+
+        return new StringBuilder(str).reverse().toString();
     }
 
     public static void main(String[] args) {
@@ -32,10 +42,15 @@ public class P1to5 {
         final String reversedStringUsingLoop4 = reverseStringUsingLoop("Harun"); // o/p : nuraH
         System.out.println(reversedStringUsingLoop4);
 
-        final String reversedStringUsingLoop5 = reverseStringUsingRec("H"); // o/p : H
-        System.out.println(reversedStringUsingLoop5);
-        final String reversedStringUsingLoop6 = reverseStringUsingRec("Harun"); // o/p : nuraH
-        System.out.println(reversedStringUsingLoop6);
+        final String reversedStringUsingRec1 = reverseStringUsingRec("H"); // o/p : H
+        System.out.println(reversedStringUsingRec1);
+        final String reversedStringUsingRec2 = reverseStringUsingRec("Harun"); // o/p : nuraH
+        System.out.println(reversedStringUsingRec2);
+
+        final String reversedStringUsingStringBuilder1 = reverseStringUsingStringBuilder("H"); // o/p : H
+        System.out.println(reversedStringUsingStringBuilder1);
+        final String reversedStringUsingStringBuilder2 = reverseStringUsingRec("Harun"); // o/p : nuraH
+        System.out.println(reversedStringUsingStringBuilder2);
 
     }
 }
