@@ -1,5 +1,20 @@
 package patterns;
 
 public class P1to5 {
+    public static void main(String[] args) {
+        //1
+        //12
+        //123
+        //1234
+        //12345
+        int row = 5, column=5; // row (up to down) column (left to right)
+        for(int i=0; i<row; i++){ // up to down 1 to 5 as value or 0 to 4 as index
+            for(int j=0; j<=i; j++){ // j=0 to i because we need column is equals to i ex :- 0 -> 1 , 1-> 2
+                System.out.print(j+1); // j+1 because j = 0 not 1 - > 0+1 = 1, 1+1 = 2, 2+1 = 3, 3+1 = 4... not 0,1,2...
+                // print without new line, because we need number left to right
+            }
+            System.out.println();// new line
+        }
 
+    }
 }
