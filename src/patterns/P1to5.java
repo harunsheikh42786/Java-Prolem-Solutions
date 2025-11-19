@@ -34,5 +34,37 @@ public class P1to5 {
             System.out.println(); // new line
         }
 
+        //    *
+        //   ***
+        //  *****
+        // *******
+        //*********
+        //1234 *
+        //123 ** *
+        //12 *** **
+        //1 **** ***
+        // ***** ****
+        int row3 = 5, column3 = 5;
+        for (int i=0; i<row2; i++){
+            // 1st decrement pyramid 4->1
+            for (int j=0; j<column2-i-1; j++){ // column2-i-1 = 5-0-1 = 4 // space
+                System.out.print(" "); // print spaces
+            }
+
+            // 2nd increment pyramid 1->5
+            int count = i+1; // 0 + 1 = 1
+            for (int k=count; k>0; k--){
+                System.out.print("*");
+                count--; // for decrement 5->4...1->0
+            }
+
+            // 3rd increment pyramid
+            for (int j=0; j<i; j++){ // i = 0, * = 0, //  * ** ***
+                System.out.print("*"); // print spaces
+            }
+            System.out.println(); // new line
+        }
+
+
     }
 }
