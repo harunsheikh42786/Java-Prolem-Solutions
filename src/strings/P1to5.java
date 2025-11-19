@@ -33,6 +33,14 @@ public class P1to5 {
 
         return new StringBuilder(str).reverse().toString();
     }
+    // P4
+    public static String reverseStringUsingStringBuffer(String str){
+        // Validate string
+        if (str == null || str.isEmpty()) throw new RuntimeException("String should not be null or empty");
+        if (str.length() == 1) return str;
+
+        return new StringBuffer(str).reverse().toString();
+    }
 
     public static void main(String[] args) {
 //        final String reversedStringUsingLoop1 = reverseStringUsingLoop(null); // throw exception
@@ -51,6 +59,11 @@ public class P1to5 {
         System.out.println(reversedStringUsingStringBuilder1);
         final String reversedStringUsingStringBuilder2 = reverseStringUsingRec("Harun"); // o/p : nuraH
         System.out.println(reversedStringUsingStringBuilder2);
+
+        final String reversedStringUsingStringBuffer1 = reverseStringUsingStringBuilder("H"); // o/p : H
+        System.out.println(reversedStringUsingStringBuffer1);
+        final String reversedStringUsingStringBuffer2 = reverseStringUsingRec("Harun"); // o/p : nuraH
+        System.out.println(reversedStringUsingStringBuffer2);
 
     }
 }
