@@ -41,6 +41,14 @@ public class P1to5 {
 
         return new StringBuffer(str).reverse().toString();
     }
+    // P5
+    public static boolean checkPalindrome(String str){
+        // Validate string
+        if (str == null || str.isEmpty()) throw new RuntimeException("String should not be null or empty");
+        if (str.length() == 1) return true;
+
+        return str.equalsIgnoreCase(reverseStringUsingRec(str));
+    }
 
     public static void main(String[] args) {
 //        final String reversedStringUsingLoop1 = reverseStringUsingLoop(null); // throw exception
@@ -64,6 +72,13 @@ public class P1to5 {
         System.out.println(reversedStringUsingStringBuffer1);
         final String reversedStringUsingStringBuffer2 = reverseStringUsingRec("Harun"); // o/p : nuraH
         System.out.println(reversedStringUsingStringBuffer2);
+
+        final boolean isPalindrome1 = checkPalindrome("H"); // o/p : true
+        System.out.println("H : "+isPalindrome1);
+        final boolean isPalindrome2 = checkPalindrome("Harun"); // o/p : false
+        System.out.println("Harun : " + isPalindrome2);
+        final boolean isPalindrome3 = checkPalindrome("madam"); // o/p : true
+        System.out.println("madam : "+isPalindrome3);
 
     }
 }
