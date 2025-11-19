@@ -65,6 +65,51 @@ public class P1to5 {
             System.out.println(); // new line
         }
 
+        //    *
+        //   ***
+        //  *****
+        // *******
+        //*********
+        // *******
+        //  *****
+        //   ***
+        //    *
+        // Solution break it into sub problem
+        //    *
+        //   ** *
+        //  *** **
+        // **** ***
+        //***** **** row1 = 5
+        int row4 = 5, column4 = 5, row5 = 4, column5 = 4;
+        for(int i=0; i<row4; i++){ // 0 -> 5
+            for (int j=0; j<column4-i-1; j++){ // 0 -> (5 - 0 - 1) = 0 -> 4
+                System.out.print(" ");
+            }
+            for (int k = 0; k < i+1; k++) {
+                System.out.print("*");
+            }
+            for (int l = 0; l < i; l++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        // **** ***
+        //  *** **
+        //   ** *
+        //    * row2 = 4
+        for(int i=0; i<row5; i++){ // 0 -> 5
+            for (int j=0; j<i+1; j++){ // 0 -> (5 - 0 - 1) = 0 -> 4
+                System.out.print(" ");
+            }
+            for (int k = i; k < column5; k++) {
+                System.out.print("*");
+            }
+            for (int l = i; l < column5-1; l++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
 
     }
 }
