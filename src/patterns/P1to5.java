@@ -2,6 +2,7 @@ package patterns;
 
 public class P1to5 {
     public static void main(String[] args) {
+        // Left to Right : Number Triangle
         //1
         //12
         //123
@@ -16,6 +17,7 @@ public class P1to5 {
             System.out.println();// new line
         }
 
+        // Right to Left : Number Triangle
         //    1
         //   21
         //  321
@@ -34,11 +36,13 @@ public class P1to5 {
             System.out.println(); // new line
         }
 
+        // Pyramid
         //    *
         //   ***
         //  *****
         // *******
         //*********
+
         //1234 *
         //123 ** *
         //12 *** **
@@ -65,6 +69,7 @@ public class P1to5 {
             System.out.println(); // new line
         }
 
+        // Diamond
         //    *
         //   ***
         //  *****
@@ -110,6 +115,37 @@ public class P1to5 {
             System.out.println();
         }
 
+        // Lightning
+        //    *
+        //   **
+        //  ***
+        // ****
+        //*****
+        //    *****
+        //    ****
+        //    ***
+        //    **
+        //    *
+        int row6 = 5, column6 = 5;
+        for(int i=0; i<row6; i++){ // 0 -> 5
+            for (int j=i; j<column6-1; j++){ // 0 -> (5 - 0 - 1) = 0 -> 4
+                System.out.print(" ");
+            }
+            for (int k = 0; k < i+1; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        int row7 = 5, column7 = 5;
+        for(int i=0; i<row6; i++){ // 0 -> 5
+            for (int j=0; j<column6-1; j++){ // 0 -> (5 - 0 - 1) = 0 -> 4
+                System.out.print(" ");
+            }
+            for (int k = column7; k > i; k--) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
 
     }
 }
