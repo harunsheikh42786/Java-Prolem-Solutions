@@ -1,6 +1,7 @@
 package streams.entities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Student {
 
@@ -12,11 +13,11 @@ public class Student {
     private String department;
     private String city;
 
-    public Student(int id, String name, String email, LocalDate dob, double marks, String department, String city) {
+    public Student(int id, String name, String email, String dob, double marks, String department, String city) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.dob = dob;
+        this.dob = LocalDate.parse(dob, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         this.marks = marks;
         this.department = department;
         this.city = city;
